@@ -1,0 +1,112 @@
+body {
+    background-color: #0f1116;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 20px;
+}
+
+#links {
+    width: 400px;
+    text-align: left;
+    font-size: x-large;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+#links a {
+    color: white;
+    text-decoration: none;
+    margin-top: 20px;
+    margin: 10px 0px;
+    border: white 1px solid;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+#links a:hover {
+    background-color: #1f1f1f;
+    cursor: pointer;
+}
+
+#header {
+    max-width: 1200px;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(
+        145deg,
+        #0f1116 0%,
+        #161923 50%,
+        #0f1116 100%
+    );
+    position: relative;
+}
+
+.app-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #ffffff 0%, #a1a1a1 70%, #707070 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    animation: fadeInDown 0.8s ease-out;
+}
+
+.app-subtitle {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #9ca3af;
+    margin-bottom: 3rem;
+    letter-spacing: 2px;
+    position: relative;
+    animation: fadeIn 1s ease-out;
+    display: inline-block;
+    padding: 1rem;
+}
+
+.app-subtitle::after {
+    content: '';
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    width: 180px;
+    height: 8px;
+
+    background: linear-gradient(90deg,
+        /* FILTER: Solid cork color */
+        #dba456 0%,
+        #dba456 15%,
+        /* FILTER LINE */
+        #8b4513 15.5%,
+        #8b4513 16%,
+        /* PAPER */
+        #f8f8f8 16.5%,
+        #ffffff 60%,
+        #ffffff 95%,
+        /* EMBER: Solid red tip */
+        #ef4444 95%
+    );
+
+    border-radius: 4px;
+
+    box-shadow: 
+        0 2px 4px rgba(0, 0, 0, 0.2),
+        0 0 10px rgba(239, 68, 68, 0.3),
+        inset 0 1px 2px rgba(255, 255, 255, 0.5);
+
+    backdrop-filter: contrast(1.02);
+    transform: translateX(-50%) rotate(-1deg);
+}
