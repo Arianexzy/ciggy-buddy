@@ -1,7 +1,6 @@
 use dioxus::prelude::*;
 use lucide_dioxus::{Calendar, Clock, Layers, Moon, Sun};
 
-
 struct Period {
     id: &'static str,
     label: &'static str,
@@ -38,7 +37,7 @@ pub struct TimePeriodProps {
 #[component]
 pub fn TimePeriod(props: TimePeriodProps) -> Element {
     let mut time_period_selected = props.time_period_selected;
-    
+
     rsx! {
         div { class: "time-period-container",
             {

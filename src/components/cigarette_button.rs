@@ -1,19 +1,23 @@
+use crate::storage::storage;
 use dioxus::prelude::*;
 use lucide_dioxus::Cigarette;
-use crate::database;
 // use std::time::Duration;
-
 
 #[component]
 pub fn CigaretteButton() -> Element {
+    let mut count = use_signal(|| 0);
+
     rsx! {
         button {
             class: "cigarette-button",
-            onclick: move |_| async move {
-                database::save_total_count().await;
-                println!("Button clicked!!!");
+            onclick: move |_| {
+                storage::add_smoking_event();
+                count.set(storage::get_total_count());
             },
             Cigarette {},
+        }
+        div {
+            "Total: {count()}"
         }
     }
 }
