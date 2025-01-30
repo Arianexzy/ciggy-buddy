@@ -1,7 +1,7 @@
 use dioxus::prelude::*;
 
 mod components;
-mod database;
+mod storage;
 mod views;
 use views::Home;
 
