@@ -3,7 +3,7 @@ use crate::storage::storage;
 use dioxus::prelude::*;
 
 #[component]
-pub fn Home() -> Element {    
+pub fn Home() -> Element {
     let time_period_selected = use_signal(|| "total".to_string());
 
     let count_resource = use_resource(move || {
@@ -23,14 +23,14 @@ pub fn Home() -> Element {
     let count = match &*count_resource.read_unchecked() {
         Some(count) => *count,
         _ => 0,
-    };    
-    
+    };
+
     rsx! {
         div { class: "app-container",
             h1 { class: "app-title", "Ciggy Buddy" }
             TimePeriod { time_period_selected }
             CigaretteCounter { count }
-            CigaretteButton { count_resource: count_resource }
+            CigaretteButton { count_resource }
         }
     }
 }

@@ -24,11 +24,9 @@ pub fn add_smoking_event() {
 
 pub fn load_data() -> SmokingData {
     let path = get_storage_path();
-    
+
     match fs::read_to_string(&path) {
-        Ok(contents) => {
-            serde_json::from_str(&contents).unwrap()
-        },
+        Ok(contents) => serde_json::from_str(&contents).unwrap(),
         Err(err) => {
             println!("storage::load_data: Failed to load file: {}", err);
             SmokingData::default()
@@ -51,7 +49,7 @@ pub fn get_storage_path() -> PathBuf {
     path.join("smoking_data.json")
 }
 
-/* 
+/*
     GETTER FUNCTIONS
 */
 
@@ -60,7 +58,7 @@ pub fn get_total_count() -> i32 {
 }
 
 pub fn get_today_count() -> i32 {
-    get_count(|data| data.today_count()) 
+    get_count(|data| data.today_count())
 }
 
 pub fn get_week_count() -> i32 {
@@ -76,7 +74,7 @@ pub fn get_year_count() -> i32 {
 }
 
 fn get_count<F>(count_fn: F) -> i32
-where 
+where
     F: FnOnce(&SmokingData) -> i32,
 {
     let mut storage = STORAGE.lock();
@@ -86,8 +84,3 @@ where
     let data = storage.as_ref().unwrap();
     count_fn(data)
 }
-
-
-
-
-
