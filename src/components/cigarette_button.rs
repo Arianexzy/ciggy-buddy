@@ -3,21 +3,23 @@ use dioxus::prelude::*;
 use lucide_dioxus::Cigarette;
 // use std::time::Duration;
 
+#[derive(PartialEq, Clone, Props)]
+pub struct CigaretteButtonProps {
+    count_resource: Resource<i32>,
+}
+
 #[component]
-pub fn CigaretteButton() -> Element {
-    let mut count = use_signal(|| 0);
+pub fn CigaretteButton(props: CigaretteButtonProps) -> Element {
+    let mut count_resource = props.count_resource;
 
     rsx! {
         button {
             class: "cigarette-button",
             onclick: move |_| {
                 storage::add_smoking_event();
-                count.set(storage::get_total_count());
+                count_resource.restart();
             },
-            Cigarette {},
-        }
-        div {
-            "Total: {count()}"
+            Cigarette {}
         }
     }
 }

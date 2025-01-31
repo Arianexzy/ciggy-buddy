@@ -1,4 +1,4 @@
-use crate::storage::time_utils::*;
+use crate::storage::time_utils;
 use chrono::{DateTime, Local};
 use serde::{Deserialize, Serialize};
 
@@ -21,7 +21,7 @@ impl SmokingData {
         let now = Local::now();
         self.events
             .iter()
-            .filter(|event| is_same_day(&event.timestamp, &now))
+            .filter(|event| time_utils::is_same_day(&event.timestamp, &now))
             .count() as i32
     }
 
@@ -29,7 +29,7 @@ impl SmokingData {
         let now = Local::now();
         self.events
             .iter()
-            .filter(|event| is_same_week(&event.timestamp, &now))
+            .filter(|event| time_utils::is_same_week(&event.timestamp, &now))
             .count() as i32
     }
 
@@ -37,7 +37,7 @@ impl SmokingData {
         let now = Local::now();
         self.events
             .iter()
-            .filter(|event| is_same_month(&event.timestamp, &now))
+            .filter(|event| time_utils::is_same_month(&event.timestamp, &now))
             .count() as i32
     }
 
@@ -45,7 +45,7 @@ impl SmokingData {
         let now = Local::now();
         self.events
             .iter()
-            .filter(|event| is_same_year(&event.timestamp, &now))
+            .filter(|event| time_utils::is_same_year(&event.timestamp, &now))
             .count() as i32
     }
 }

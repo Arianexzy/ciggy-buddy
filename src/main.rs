@@ -5,6 +5,9 @@ mod storage;
 mod views;
 use views::Home;
 
+// mod synth_data;
+// use synth_data::*;
+
 const FAVICON: Asset = asset!("/assets/favicon.ico");
 const MAIN_CSS: Asset = asset!("/assets/styling/main.css");
 const TIME_PERIOD_CSS: Asset = asset!("/assets/styling/time_period.css");
