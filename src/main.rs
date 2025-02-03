@@ -15,6 +15,9 @@ const CIGARETTE_COUNTER_CSS: Asset = asset!("/assets/styling/cigarette_counter.c
 const CIGARETTE_BUTTON_CSS: Asset = asset!("/assets/styling/cigarette_button.css");
 
 fn main() {
+    // Generate current real cigarette count data
+    // let file_path = "/data/user/0/com.example.CiggyBuddy/files/smoking_data.json";
+    // generate_test_data(file_path);
     dioxus::launch(App);
 }
 
