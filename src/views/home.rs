@@ -28,6 +28,8 @@ pub fn Home() -> Element {
     rsx! {
         div { class: "app-container",
             h1 { class: "app-title", "Ciggy Buddy" }
+            h2 { class: "app-subtitle" }
+            br {}
             TimePeriod { time_period_selected }
             CigaretteCounter { count }
             CigaretteButton { count_resource }
