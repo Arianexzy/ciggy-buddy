@@ -1,73 +1,25 @@
-.cigarette-button-container {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin: 2rem 0;
-    position: relative;
-}
-
 .cigarette-button {
-    width: 8rem;
-    height: 8rem;
+    width: clamp(80px, 30vw, 120px);
+    height: clamp(80px, 30vw, 120px);
     border-radius: 50%;
     border: none;
-    cursor: pointer;
-    color: white;
-    font-weight: bold;
-    position: relative;
-    background: radial-gradient(circle at center,
-        var(--ember-center) 40%,
-        var(--ember-glow) 70%,
-        var(--ember-edge) 100%
+    background: radial-gradient(circle at center, 
+        var(--primary) 0%, 
+        var(--primary-dark) 100%
     );
-}
-
-.cigarette-button:focus {
-    outline: none;
-    box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.3);
+    box-shadow: 0 8px 24px rgba(239, 68, 68, 0.3);
+    touch-action: manipulation;
+    transition: transform 0.1s ease;
+    position: relative;
+    margin: 2rem auto;
 }
 
 .cigarette-button:active {
     transform: scale(0.95);
-    box-shadow: 0 0 60px rgba(239, 68, 68, 0.7);
 }
 
-/* Smoke effects */
-.cigarette-button::before {
-    content: '';
-    position: absolute;
-    top: -30px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 20px;
-    height: 100px;
-    background: linear-gradient(
-        to top,
-        rgba(255, 255, 255, 0.6),
-        var(--smoke-color),
-        transparent
-    );
-    filter: blur(8px);
-    animation: smokeRise 4s infinite ease-out;
-}
-
-@keyframes smokeRise {
-    0% {
-        transform: translateX(-50%) translateY(0) scaleY(1);
-        opacity: 0.6;
-    }
-    50% {
-        transform: translateX(-45%) translateY(-75px) scaleY(2);
-        opacity: 0.3;
-    }
-    100% {
-        transform: translateX(-50%) translateY(-150px) scaleY(3);
-        opacity: 0;
-    }
-}
-
-.cigarette-button.clicked::before {
-    animation-duration: 2s;
-    opacity: 0.8;
-    height: 100px;
+.cigarette-button svg {
+    width: 50%;
+    height: 50%;
+    color: white;
 }
