@@ -22,3 +22,14 @@ script = []
 # Javascript code file
 # serve: [dev-server] only
 script = []
+
+[bundle]
+identifier = "com.ariane"
+publisher = "Ariane"
+icon = [
+    "assets/icon-16x16.png",
+    "assets/icon-24x24.png",
+    "assets/icon-32x32.png",
+    "assets/icon-64x64.png",
+    "assets/icon-256x256.png"
+]
