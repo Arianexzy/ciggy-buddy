@@ -1,0 +1,4 @@
+3) Fix the thumbnail
+4) Deploy on Google Play store with Tauri guide
+5) Eliminate hard coded path in storage::get_storage_path
+6) Rest of the app is loading before CSS does so you can see the blank css at first

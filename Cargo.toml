@@ -7,12 +7,11 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-android-activity = "0.6.0"
 chrono = { version = "0.4.39", features = ["serde"] }
 dioxus = { version = "0.6.0", features = [] }
-directories = "6.0.0"
 lucide-dioxus = "1.1.0"
 parking_lot = "0.12.3"
+rand = "0.9.0"
 serde = { version = "1.0.217", features = ["derive"] }
 serde_json = "1.0.138"
 
