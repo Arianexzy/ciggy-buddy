@@ -18,7 +18,7 @@ const CIGARETTE_BUTTON_CSS: Asset = asset!("/assets/styling/cigarette_button.css
 fn main() {
     let file_path = "/data/user/0/com.ariane.CiggyBuddy/files/smoking_data.json";
     if !Path::new(file_path).exists() {
-        generate_real_data(file_path); 
+        generate_real_data(file_path);
     }
     dioxus::launch(App);
 }
@@ -26,7 +26,7 @@ fn main() {
 #[component]
 fn App() -> Element {
     rsx! {
-        document::Meta { 
+        document::Meta {
             name: "viewport",
             content: "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no",
         }

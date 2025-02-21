@@ -75,9 +75,9 @@ fn save_data(data: &SmokingData) {
     }
 }
 
-fn with_storage<F, R>(f: F) -> R 
-where 
-    F: FnOnce(&mut SmokingData) -> R, 
+fn with_storage<F, R>(f: F) -> R
+where
+    F: FnOnce(&mut SmokingData) -> R,
 {
     let mut storage = STORAGE.lock();
     if storage.is_none() {
